@@ -50,59 +50,7 @@ Each database is optimized differently for how you want to read and write data a
 
 # Popular Databases
 
-
-
-## RethinkDB
-
-Distributed document-oriented database with its own query language known as [ReQL](https://www.rethinkdb.com/docs/introduction-to-reql/).
-
-[![Website](https://img.shields.io/badge/website-rethinkdb.com-blue.svg?maxAge=2592000)](https://www.rethinkdb.com/)
-
-
-#### Good for:
-
-> Use cases where companies benefited from RethinkDB’s realtime push architecture include:
-> - Collaborative web and mobile apps
-> - Streaming analytics apps
-> - Multiplayer games
-> - Realtime marketplaces
-> - Connected devices
->
-> — [Official FAQ](https://www.rethinkdb.com/faq/)
-
-> So in simple terms RethinkDB will be best suited when you have real time data coming in and you want that data to continuously refresh in your front end for the users to see. Examples which can use RethinkDB as their back-end can be a stock market application or a multiplayer game.
->
-> — [Getting Started with RethinkDB in Nodejs](http://www.codingdefined.com/2016/09/getting-started-with-rethinkdb-in-nodejs.html)
-
-#### Tradeoffs:
-
->  When is RethinkDB not a good choice?
-> - RethinkDB is not a good choice if you need full ACID support or strong schema enforcement—in this case you are better off using a relational database such as MySQL or PostgreSQL.
-> - If you are doing deep, computationally-intensive analytics you are better off using a system like Hadoop or a column-oriented store like Vertica.
-> - In some cases RethinkDB trades off write availability in favor of data consistency. If high write availability is critical and you don’t mind dealing with conflicts you may be better off with a Dynamo-style system like Riak.
->
-> — [Official FAQ](https://www.rethinkdb.com/faq/#when-is-rethinkdb-not-a-good-choice)
-
-
-
-## PostgreSQL
-
-Advanced SQL-compliant object-relational database.
-
-[![Website](https://img.shields.io/badge/website-postgresql.org-blue.svg?maxAge=2592000)](https://www.postgresql.org/)
-
-#### Good for:
-
-[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
-
-#### Tradeoffs:
-
-> - For simple read-heavy operations, PostgreSQL can be an over-kill and might appear less performant than the counterparts, such as MySQL.
-> - Unless you require absolute data integrity, ACID compliance or complex designs, PostgreSQL can be an over-kill for simple set-ups.
->  - Replication: Unless you are willing to spend the time, energy and resources, achieving replication with [PostgreSQL,] MySQL might be simpler for those who lack the database and system administration experience.
->  
->  — [Digital Ocean - SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management Systems](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
-
+We're listing popular/useful free databases in order of their popularity score on [db-engines.com](http://db-engines.com/en/ranking).
 
 ## MySQL
 
@@ -127,12 +75,11 @@ Note that MySQL has multiple storage engines you can choose from with different 
 > — [Five Advantages & Disadvantages Of MySQL](https://www.datarealm.com/blog/five-advantages-disadvantages-of-mysql/)
 
 
-## Neo4j
+## PostgreSQL
 
-Transactional graph database using the [Cypher query language](http://neo4j.com/docs/stable/cypher-introduction.html).
+Advanced SQL-compliant object-relational database.
 
-[![Website](https://img.shields.io/badge/website-neo4j.com-blue.svg?maxAge=2592000)](https://neo4j.com/)
-
+[![Website](https://img.shields.io/badge/website-postgresql.org-blue.svg?maxAge=2592000)](https://www.postgresql.org/)
 
 #### Good for:
 
@@ -140,7 +87,11 @@ Transactional graph database using the [Cypher query language](http://neo4j.com/
 
 #### Tradeoffs:
 
-[What situations is it not optimized for? Make an issue or pull request!]
+> - For simple read-heavy operations, PostgreSQL can be an over-kill and might appear less performant than the counterparts, such as MySQL.
+> - Unless you require absolute data integrity, ACID compliance or complex designs, PostgreSQL can be an over-kill for simple set-ups.
+>  - Replication: Unless you are willing to spend the time, energy and resources, achieving replication with [PostgreSQL,] MySQL might be simpler for those who lack the database and system administration experience.
+>  
+>  — [Digital Ocean - SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management Systems](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
 
 
 ## MongoDB
@@ -159,12 +110,11 @@ Document-oriented database popular for being easy to start with and being in the
 [What situations is it not optimized for? Make an issue or pull request!]
 
 
-## CouchDB
+## Cassandra
 
-Dcoument-oriented database "built for the web" using JavaScript as a query language and versioning data to prevent conflicting concurrent writes from overwritting one another.
+Distributed database with a focus on master-master replication.
 
-[![Website](https://img.shields.io/badge/website-couchdb.apache.org-blue.svg?maxAge=2592000)](https://couchdb.apache.org/)
-
+[![Website](https://img.shields.io/badge/website-cassandra.apache.org-blue.svg?maxAge=2592000)](https://cassandra.apache.org/)
 
 #### Good for:
 
@@ -175,7 +125,7 @@ Dcoument-oriented database "built for the web" using JavaScript as a query langu
 [What situations is it not optimized for? Make an issue or pull request!]
 
 
-## SQLite3
+## SQLite
 
 Embedded relational database.
 
@@ -218,6 +168,110 @@ In-memory (but persisted to disk) key-value store wherein values can contain mor
 > Redis is an in-memory but persistent on disk database, so it represents a different trade off where very high write and read speed is achieved with the limitation of data sets that can't be larger than memory.
 > 
 > — [Redis FAQ](http://redis.io/topics/faq)
+
+
+## Elasticsearch
+
+Distributed, document-oriented full-text search engine.
+
+[![Website](https://img.shields.io/badge/website-elastic.co/products/elasticsearch-blue.svg?maxAge=2592000)](https://www.elastic.co/products/elasticsearch)
+
+#### Good for:
+
+> Elasticsearch builds distributed capabilities on top of Apache Lucene to provide the most powerful full- text search capabilities available. Powerful, developer-friendly query API supports multilingual search, geolocation, contextual did-you-mean suggestions, autocomplete, and result snippets.
+> q
+> — [Website](https://www.elastic.co/products/elasticsearch)
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## MariaDB
+
+Relational database forked from and compatible with MySQL but with further enhanced capabilities.
+
+[![Website](https://img.shields.io/badge/website-mariadb.org-blue.svg?maxAge=2592000)](https://mariadb.org/)
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## Neo4j
+
+Transactional graph database using the [Cypher query language](http://neo4j.com/docs/stable/cypher-introduction.html).
+
+[![Website](https://img.shields.io/badge/website-neo4j.com-blue.svg?maxAge=2592000)](https://neo4j.com/)
+
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## Couchbase
+
+
+## Memcached
+
+
+## CouchDB
+
+Dcoument-oriented database "built for the web" using JavaScript as a query language and versioning data to prevent conflicting concurrent writes from overwritting one another.
+
+[![Website](https://img.shields.io/badge/website-couchdb.apache.org-blue.svg?maxAge=2592000)](https://couchdb.apache.org/)
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## RethinkDB
+
+Distributed document-oriented database with its own query language known as [ReQL](https://www.rethinkdb.com/docs/introduction-to-reql/).
+
+[![Website](https://img.shields.io/badge/website-rethinkdb.com-blue.svg?maxAge=2592000)](https://www.rethinkdb.com/)
+
+
+#### Good for:
+
+> Use cases where companies benefited from RethinkDB’s realtime push architecture include:
+> - Collaborative web and mobile apps
+> - Streaming analytics apps
+> - Multiplayer games
+> - Realtime marketplaces
+> - Connected devices
+>
+> — [Official FAQ](https://www.rethinkdb.com/faq/)
+
+> So in simple terms RethinkDB will be best suited when you have real time data coming in and you want that data to continuously refresh in your front end for the users to see. Examples which can use RethinkDB as their back-end can be a stock market application or a multiplayer game.
+>
+> — [Getting Started with RethinkDB in Nodejs](http://www.codingdefined.com/2016/09/getting-started-with-rethinkdb-in-nodejs.html)
+
+#### Tradeoffs:
+
+>  When is RethinkDB not a good choice?
+> - RethinkDB is not a good choice if you need full ACID support or strong schema enforcement—in this case you are better off using a relational database such as MySQL or PostgreSQL.
+> - If you are doing deep, computationally-intensive analytics you are better off using a system like Hadoop or a column-oriented store like Vertica.
+> - In some cases RethinkDB trades off write availability in favor of data consistency. If high write availability is critical and you don’t mind dealing with conflicts you may be better off with a Dynamo-style system like Riak.
+>
+> — [Official FAQ](https://www.rethinkdb.com/faq/#when-is-rethinkdb-not-a-good-choice)
+
 
 
 ## LevelDB
@@ -271,3 +325,6 @@ Embedded, transactional, memory-mapped key-value store.
 [Is LMDB a LevelDB Killer?](https://symas.com/is-lmdb-a-leveldb-killer/) (Summarize?)
 
 [What situations is it not optimized for? Make an issue or pull request!]
+
+
+[more?]
