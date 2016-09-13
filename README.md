@@ -93,75 +93,86 @@ Advanced SQL-compliant object-relational database.
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+> - For simple read-heavy operations, PostgreSQL can be an over-kill and might appear less performant than the counterparts, such as MySQL.
+> - Unless you require absolute data integrity, ACID compliance or complex designs, PostgreSQL can be an over-kill for simple set-ups.
+>  - Replication: Unless you are willing to spend the time, energy and resources, achieving replication with [PostgreSQL,] MySQL might be simpler for those who lack the database and system administration experience.
+>  
+>  — [Digital Ocean - SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management Systems](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
 
 
 ## MySQL
 
-A relational database popular for it's ease of use.
+A relational database popular for its ease of use and extensive use in the industry.
 
 [![Website](https://img.shields.io/badge/website-mysql.com-blue.svg?maxAge=2592000)](https://www.mysql.com/)
 
+Note that MySQL has multiple storage engines you can choose from with different performance/use cases. The default and most commonly used is InnoDB.
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+> - It’s Got A Few Stability Issues
+> - It Suffers From Relatively Poor Performance Scaling
+> - Development Is Not Community Driven – and Hence Has Lagged
+> - Its Functionality Tends To Be Heavily Dependant On Addons
+> - Developers May Find Some Of Its Limitations To Be Frustrating
+> 
+> — [Five Advantages & Disadvantages Of MySQL](https://www.datarealm.com/blog/five-advantages-disadvantages-of-mysql/)
 
 
 ## Neo4j
 
-"An ACID-compliant transactional database with native graph storage and processing"
+Transactional graph database using the [Cypher query language](http://neo4j.com/docs/stable/cypher-introduction.html).
 
 [![Website](https://img.shields.io/badge/website-neo4j.com-blue.svg?maxAge=2592000)](https://neo4j.com/)
 
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+[What situations is it not optimized for? Make an issue or pull request!]
 
 
 ## MongoDB
 
-
+Document-oriented database popular for being easy to start with and being in the well known MEAN stack.
 
 [![Website](https://img.shields.io/badge/website-mongodb.com-blue.svg?maxAge=2592000)](https://www.mongodb.com/)
 
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+[What situations is it not optimized for? Make an issue or pull request!]
 
 
 ## CouchDB
 
-"Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API"
+Dcoument-oriented database "built for the web" using JavaScript as a query language and versioning data to prevent conflicting concurrent writes from overwritting one another.
 
 [![Website](https://img.shields.io/badge/website-couchdb.apache.org-blue.svg?maxAge=2592000)](https://couchdb.apache.org/)
 
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+[What situations is it not optimized for? Make an issue or pull request!]
 
 
 ## SQLite3
@@ -173,8 +184,90 @@ Embedded relational database.
 
 #### Good for:
 
-[Make an issue or pull request!]
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
 
 #### Tradeoffs:
 
-[Make an issue or pull request!]
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## Redis
+
+In-memory (but persisted to disk) key-value store wherein values can contain more complex data structures for complex yet very efficient queries.
+
+[![Website](https://img.shields.io/badge/website-redis.io-blue.svg?maxAge=2592000)](http://redis.io/)
+
+#### Good For:
+
+> - Show latest items listings in your home page
+> - Deletion and filtering
+> - Leaderboards and related problems
+> - Order by user votes and time
+> - Implement expires on items
+> - Counting stuff
+> - Unique N items in a given amount of time
+> - Real time analysis of what is happening, for stats, anti spam, or whatever
+> - Pub/Sub
+> - Queues
+> - Caching
+> 
+> — [High Scalability - 11 Common Web Use Cases Solved In Redis](http://highscalability.com/blog/2011/7/6/11-common-web-use-cases-solved-in-redis.html)
+	
+#### Tradeoffs:
+
+> Redis is an in-memory but persistent on disk database, so it represents a different trade off where very high write and read speed is achieved with the limitation of data sets that can't be larger than memory.
+> 
+> — [Redis FAQ](http://redis.io/topics/faq)
+
+
+## LevelDB
+
+Embedded, low-level key-value store. A number of other databases build a higher level abstraction on top of leveldb.
+
+[![Website](https://img.shields.io/badge/website-github.com/google/leveldb-blue.svg?maxAge=2592000)](https://github.com/google/leveldb)
+
+Note that in the Node.js ecosystem [LevelUP](https://github.com/Level/levelup/#levelup) provides an API for LevelDB which can use [other backends and has numerous plugins](https://github.com/Level/levelup/wiki/Modules#modules) which can extend its functionality with complex operations.
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[Is LMDB a LevelDB Killer?](https://symas.com/is-lmdb-a-leveldb-killer/) (Summarize?)
+
+> LevelDB is widely noted for being unreliable and databases it manages are prone to corruption. Academic studies of past versions of LevelDB have found that, under some file systems, the data stored in those versions of LevelDB might become inconsistent after a system crash or power failure. LevelDB corruption is so commonplace that corruption detection has to be built in to applications that use it.
+> 
+> — [Wikipedia](https://en.wikipedia.org/wiki/LevelDB#Bugs_and_reliability)
+
+
+## RocksDB
+
+Embedded key-value store forked from LevelDB to improve performance for different use cases.
+
+[![Website](https://img.shields.io/badge/website-rocksdb.org-blue.svg?maxAge=2592000)](http://www.rocksdb.org/)
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[What situations is it not optimized for? Make an issue or pull request!]
+
+
+## LMDB
+
+Embedded, transactional, memory-mapped key-value store.
+
+[![Website](https://img.shields.io/badge/website-symas.com/mdb-blue.svg?maxAge=2592000)](http://symas.com/mdb)
+
+#### Good for:
+
+[What types of applications best utilize its performance or other attributes and why? Make an issue or pull request!]
+
+#### Tradeoffs:
+
+[Is LMDB a LevelDB Killer?](https://symas.com/is-lmdb-a-leveldb-killer/) (Summarize?)
+
+[What situations is it not optimized for? Make an issue or pull request!]
