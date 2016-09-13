@@ -1,6 +1,6 @@
 # Databases in Simple Terms
 
-Making an informed decision of what database to use for your next web application is hard. This document attempts to make it easier.
+Making an informed decision of what open source database to use for your next web application is hard. This document attempts to make it easier.
 
 Issues and/or pull requests are highly encouraged to make this document better as long as we can keep it somewhat simple and easy to look over.
 
@@ -10,13 +10,17 @@ Each database is optimized differently for how you want to read and write data a
 
 **Query language**: A specialized language for requesting or modifying data in a database, often expressing relationships or structure of that data. Not all databases utilize a query language at all.
 
-**Schema**: A specification of the structured data that will go into your database used to determine how the database is organized/optimized and/or how data is validated when being written to it.
+**Schema**: A specification of the structured data that will go into your database used to determine how the database is organized/optimized and/or how data is validated when being written to it. A schema-less database makes it your own responsibility to ensure data consistency.
 
 **Object-relational mapping** or **ORM**: A technique which provides a layer between your application and your database to convert objects into database queries.
 
 **Relational database**: A database structured with tables and columns to express the relationship between its data. Most relational databases use SQL as their query language.
 
 **Object-relational database**: A relational database which allows you to treat tables like data structures in an object-oriented language, such as with objects, classes, and inheritance.
+
+**Wide column store** or **extensible record store**: A database organized into tables but where each row can contain an arbitrarily large number of columns.
+
+**Column-oriented database**: A database which stores data grouped by column rather than by row as a traditional relational database would. This way querying a single column of every entry in a table effeciently reads just the column instead of having to scan each entry and discard other columns. The tradeoff is that updates/deletes to entries are slower as they have to write to each column individually.
 
 **Graph database**: A database using graph structures with nodes and edges to represent data points and the relationships/interconnections between them.
 
